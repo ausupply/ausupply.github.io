@@ -35,14 +35,6 @@
           width: 6%;
           height: 100%;
         }
-        .right {
-          width: 22%;
-          float: left;
-          height: 2700px;
-          float: right;
-          border-left: 2% solid #A4A4A4;
-          
-        }
         .middle {
           width: 70%;
           max-width: 900px;
@@ -77,6 +69,7 @@
         }
         #whiteshape {
             position: sticky;
+            position: absolute;
             left: 58%;
             top: 8%;
             z-index: 1;
@@ -84,6 +77,7 @@
         #titlebackwards {
             transform: rotateX(150deg);
             margin-top: 0px;
+            color: #550a8a;
         }
         table.table1 {
             border: 1px solid darkgreen;
@@ -190,7 +184,7 @@ a.ani {
     <div class="row">
   <div class="column left" style="background-color:#A4A4A4;">
     <img id=logo src="/img/logo.png">
-    <hr color=black size=4px>
+    
     <img id=list src="/img/list4.png">
   </div>
       
@@ -275,8 +269,8 @@ function myFunction() {
   document.getElementById("date").innerHTML = x;
 }
 </script>
+<img id=logo src="/img/logo.png">
 </div>
-<div class="column right" style="background-color:#383838;">
     <pre><a class="ani"; href="#">
         
              
@@ -313,7 +307,6 @@ function myFunction() {
 
 
 
-</div>
 </div>
 </body>
 </html>
