@@ -1,0 +1,191 @@
+        html body { position: relative;
+                    top: -14px;
+                    min-width: 1100px;
+                    margin-left: 0px;
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    margin-right:0;
+             }
+        body {
+            font-family: 'Source Code Pro', monospace;
+            overflow: auto
+        }
+        .imageContainer {
+            float: left;
+            padding: 10px;
+        }
+        .column {
+          float: left;
+        }
+        .left {
+          width: 12%;
+          margin-top: 0;
+        }
+        .middle {
+          width: 80%;
+          max-width: 900px;
+          margin-top: 0px;
+          float: left;
+        }
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        #logo {
+            width: 70px;
+        }
+        #list {
+          width: 30px;
+          float: left;
+        }
+        #dog {
+          margin-top: 0px;
+          width: 100%;
+        }
+        .wrapper:hover h1{
+            transition: all 0.4s ease;
+            transform: scaleY(-1);
+        }
+        #titlebackwards {
+            transform: rotateX(150deg);
+            margin-top: 0px;
+            color: #ffbf00;
+            text-shadow:
+                        -1px -1px 0 #000,  
+                         1px -1px 0 #000,
+                        -1px 1px 0 #000,
+                         1px 1px 0 #000;
+        }
+        table.table1 {
+            border: 1px solid darkgreen;
+            table-layout:fixed;
+        }
+        table.table1 td {
+            border: 2px solid black;
+            width: 450px;
+        }
+        table.table2 {
+            border: 1px solid blue;
+            table-layout:fixed;
+        }
+        table.table2 td {
+            border: 2px solid black;
+            width: 450px;
+        }
+        table.table3 {
+            border: 1px solid darkred;
+            table-layout:fixed;
+        }
+        table.table3 td {
+            border: 2px solid black;
+            width: 450px;
+        }
+        hr.hrline2 {
+            max-width: 950px
+        }
+        hr.hrline { 
+            margin-top: -25px;
+        }
+        div.scroll1 {
+            background-color: #CCCCCC;
+            width: 100%;
+            height: 400px;
+            overflow: scroll;
+        }
+        div.scroll2 {
+            background-color: #ccff00;
+            width: 100%;
+            height: 400px;
+            overflow: scroll;
+        }
+        p.ex1 { 
+            padding: 12px;
+            margin-bottom: -25px;
+            font-size:15px
+        }
+        p.ex2 { 
+            padding: 26px;
+        }
+        p.ex3 { 
+            padding: 26px;
+            margin-bottom: -25px;
+        }
+        p.enos { 
+            padding: 26px;
+            letter-spacing: 10px;
+            text-indent: 120px;
+        }
+        #overlay  {
+            position: fixed;
+            left: 43%;
+            top: 20%;
+            margin-left: -50px;
+            margin-top: -400px
+            z-index: 11;
+            color: #6a0dad;
+        }
+        #overlay2  {
+            position: fixed;
+            left: 13%;
+            top: 55%;
+            margin-left: -50px;
+            margin-top: -400px
+            z-index: 12;
+            color: #8B0000;
+        }
+                
+    a.ani {
+            position: fixed;
+            top: 25%;
+            left: 80%;
+            margin-left: -150px;
+            margin-top: -100px;
+            z-index: 10;
+            color: #0000ff;
+      
+  -moz-animation-duration: 400ms;
+  -moz-animation-name: blink;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  
+  -webkit-animation-duration: 400ms;
+  -webkit-animation-name: blink;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  
+  animation-duration: 400ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@-moz-keyframes blink {
+  from {
+    opacity: 1;
+  }
+  
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes blink {
+  from {
+    opacity: 1;
+  }
+  
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  
+  to {
+    opacity: 0;
+  }
+}
