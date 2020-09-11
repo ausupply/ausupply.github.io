@@ -38,57 +38,29 @@ body {
                         -1px 1px 0 #000,
                          1px 1px 0 #000;
         }
-  .ciclegraph {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  margin: calc(100px / 2 + 0px);
-}
+.container .row {margin:20px;text-align:center;}
+.container .row img {margin:0 20px;}
 
-.ciclegraph:before {
-  content: "img";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(100% - 2px * 2);
-  height: calc(100% - 2px * 2);
-  border-radius: 50%;
-}
-
-.ciclegraph .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  margin: calc(-100px / 2);
-  border-radius: 50%;
-}
-
- document.querySelectorAll( '.ciclegraph' ).forEach( ( ciclegraph )=>{
-  let circles = ciclegraph.querySelectorAll( '.circle' )
-  let angle = 360-90, dangle = 360 / circles.length
-  for( let i = 0; i < circles.length; ++i ){
-    let circle = circles[i]
-    angle += dangle
-    circle.style.transform = `rotate(${angle}deg) translate(${ciclegraph.clientWidth / 2}px) rotate(-${angle}deg)`
-  }
-})
 
 </style>
   
 </head>
 <body>
-
-  <div class="ciclegraph">
-    <div class="dot"><div class="wrapper"><div id="titlebackwards"><h1>A-U.Supply</h1></div></div></div>
-    <div class="circle"><img id="logo" src="/img/logo.png"/></div>
-    <div class="circle"><img id="logo2" src="/img/logo2.png"/></div>
-    <div class="circle"><img id="logo3" src="/img/logo3.png"/></div>
-    <div class="circle"><img id="logo4" src="/img/logo4.png"/></div>
-    <div class="circle"><img id="logo5" src="/img/logo5.png"/></div>
-    <div class="circle"><img id="logo6" src="/img/logo6.png"/></div>
-  </div>
+  <div class="container">
+    <div class="row">
+        <img src="/img/logo.png" alt="" width="64" height="64">
+        <img src="/img/logo2.png" alt="" width="64" height="64">
+    </div>
+    <div class="row">
+        <img src="/img/logo3.png" alt="" width="64" height="64">
+        <div class="wrapper"><div id="titlebackwards"><h1>A-U.Supply</h1></div></div>
+        <img src="/img/logo4.png" alt="" width="64" height="64">
+    </div>
+    <div class="row">
+        <img src="/img/logo5.png" alt="" width="64" height="64">
+        <img src="/img/logo6.png" alt="" width="64" height="64">
+    </div>
+</div>
 
 
 </body>
