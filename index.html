@@ -38,62 +38,48 @@ body {
                         -1px 1px 0 #000,
                          1px 1px 0 #000;
         }
-  #box{
-      width: 400px;
-      height: 400px;
-      position: relative;
-      border-radius: 100%;
-      border: 2px solid teal;
-    }
-    .dot{
-        position: absolute;
-        border-radius: 100%;
-        left: 50%;
-        top: 50%;
-        margin-left: -20px;
-        margin-top: -20px;
-    }
-    #box img{
-      width: 40px;
-      height: 40px;
-      position: absolute;
-    border-radius: 100%;
-      -webkit-transition: all 1s;
-    }
-      var circle = document.getElementById('box'),
-        imgs = document.getElementsByTagName('img'),
-        total = imgs.length,
-        coords = {},
-        diam, radius1, radius2, imgW;
+  .ciclegraph {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: calc(100px / 2 + 0px);
+}
 
-    // get circle diameter
-    // getBoundingClientRect outputs the actual px AFTER transform
-    //      using getComputedStyle does the job as we want
-    diam = parseInt( window.getComputedStyle(circle).getPropertyValue('width') ),
-    radius = diam/2,
-    imgW = imgs[0].getBoundingClientRect().width,
-    // get the dimensions of the inner circle we want the images to align to
-    radius2 = radius - imgW
+.ciclegraph:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 2px * 2);
+  height: calc(100% - 2px * 2);
+  border-radius: 50%;
+}
 
-    var i,
-        alpha = Math.PI / 2,
-        len = imgs.length,
-        corner = 2 * Math.PI / total;
+.ciclegraph .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin: calc(-100px / 2);
+  border-radius: 50%;
+}
 
-    for ( i = 0 ; i < total; i++ ){
-
-      imgs[i].style.left = parseInt( ( radius - imgW / 2 ) + ( radius2 * Math.cos( alpha ) ) ) + 'px'
-      imgs[i].style.top =  parseInt( ( radius - imgW / 2 ) - ( radius2 * Math.sin( alpha ) ) ) + 'px'
-
-      alpha = alpha - corner;
-    }
-
+ document.querySelectorAll( '.ciclegraph' ).forEach( ( ciclegraph )=>{
+  let circles = ciclegraph.querySelectorAll( '.circle' )
+  let angle = 360-90, dangle = 360 / circles.length
+  for( let i = 0; i < circles.length; ++i ){
+    let circle = circles[i]
+    angle += dangle
+    circle.style.transform = `rotate(${angle}deg) translate(${ciclegraph.clientWidth / 2}px) rotate(-${angle}deg)`
+  }
+})
 
 </style>
 </head>
 <body>
 
-  <div id="box">
+  <div class="ciclegraph">
     <div class="dot"><div class="wrapper"><div id="titlebackwards"><h1>A-U.Supply</h1></div></div></div>
     <img id="logo" src="/img/logo.png"/>
     <img id="logo2" src="/img/logo2.png"/>
