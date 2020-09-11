@@ -46,7 +46,7 @@ body {
 }
 
 .ciclegraph:before {
-  content: "";
+  content: "img";
   position: absolute;
   top: 0;
   left: 0;
@@ -76,15 +76,7 @@ body {
 })
 
 </style>
-  document.querySelectorAll( '.ciclegraph' ).forEach( ( ciclegraph )=>{
-  let circles = ciclegraph.querySelectorAll( '.circle' )
-  let angle = 360-90, dangle = 360 / circles.length
-  for( let i = 0; i < circles.length; ++i ){
-    let circle = circles[i]
-    angle += dangle
-    circle.style.transform = `rotate(${angle}deg) translate(${ciclegraph.clientWidth / 2}px) rotate(-${angle}deg)`
-  }
-})
+  
 </head>
 <body>
 
