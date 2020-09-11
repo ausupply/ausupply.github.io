@@ -10,6 +10,16 @@
   <title>A-U.Supply</title>
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500;700&display=swap" rel="stylesheet">
 <style>
+   *,
+    *:before,
+    *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    html, body{
+      min-height: 100%;
+    }
 body {
   background-color: #ffbf00;
   font-family: 'Source Code Pro', monospace;
@@ -33,7 +43,7 @@ body {
       height: 400px;
       position: relative;
       border-radius: 100%;
-    border: 1px solid teal;
+      border: 1px solid teal;
     }
     .dot{
         position: absolute;
@@ -82,7 +92,7 @@ body {
 </style>
 </head>
 <body>
-  <div class="wrapper"><div id="titlebackwards"><h1>A-U.Supply</h1></div></div>
+  <span class="dot"><div class="wrapper"><div id="titlebackwards"><h1>A-U.Supply</h1></div></div></span>
 
   <div id="box">
     <div class="dot"></div>
