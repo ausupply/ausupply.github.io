@@ -28,28 +28,72 @@ body {
                         -1px 1px 0 #000,
                          1px 1px 0 #000;
         }
-.grid-container {
-  display: grid;
-  grid-gap: 5px 5px;
-  grid-template-columns: auto auto auto;
-  padding: 5px;
-}
+  #box{
+      width: 400px;
+      height: 400px;
+      position: relative;
+      border-radius: 100%;
+    border: 1px solid teal;
+    }
+    .dot{
+        position: absolute;
+        border-radius: 100%;
+        left: 50%;
+        top: 50%;
+        margin-left: -20px;
+        margin-top: -20px;
+    }
+    #box img{
+      width: 40px;
+      height: 40px;
+      position: absolute;
+    border-radius: 100%;
+      -webkit-transition: all 1s;
+    }
+      var circle = document.getElementById('box'),
+        imgs = document.getElementsByTagName('img'),
+        total = imgs.length,
+        coords = {},
+        diam, radius1, radius2, imgW;
 
-.grid-item {
-  padding: 5px;
-}
+    // get circle diameter
+    // getBoundingClientRect outputs the actual px AFTER transform
+    //      using getComputedStyle does the job as we want
+    diam = parseInt( window.getComputedStyle(circle).getPropertyValue('width') ),
+    radius = diam/2,
+    imgW = imgs[0].getBoundingClientRect().width,
+    // get the dimensions of the inner circle we want the images to align to
+    radius2 = radius - imgW
+
+    var i,
+        alpha = Math.PI / 2,
+        len = imgs.length,
+        corner = 2 * Math.PI / total;
+
+    for ( i = 0 ; i < total; i++ ){
+
+      imgs[i].style.left = parseInt( ( radius - imgW / 2 ) + ( radius2 * Math.cos( alpha ) ) ) + 'px'
+      imgs[i].style.top =  parseInt( ( radius - imgW / 2 ) - ( radius2 * Math.sin( alpha ) ) ) + 'px'
+
+      alpha = alpha - corner;
+    }
+
+
 </style>
 </head>
 <body>
   <div class="wrapper"><div id="titlebackwards"><h1>A-U.Supply</h1></div></div>
 
-  <div class="grid-container">
-  <div class="grid-item"><img id=logo src="/img/logo.png"></div>
-  <div class="grid-item"><img id=logo src="/img/logo2.png"></div>
-  <div class="grid-item"><a href="/contact.html"><img id=logo3 src="/img/logo3.png"></a></div>  
-  <div class="grid-item"><img id=logo src="/img/logo4.png"></div>
-  <div class="grid-item"><a href="/audex.html"><img id=logo src="/img/logo5.png"></a></div>
-  <div class="grid-item"><img id=logo src="/img/logo6.png"></div>
+  <div id="box">
+    <div class="dot"></div>
+    <img id="" src="/img/logo.png"/>
+    <img id="" src="/img/logo2.png"/>
+    <img id="" src="/img/logo3.png"/>
+    <img id="" src="/img/logo4.png"/>
+    <img id="" src="/img/logo5.png"/>
+    <img id="" src="/img/logo6.png"/>
+  </div>
+
 
 </body>
 </html>
